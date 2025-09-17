@@ -1,7 +1,7 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
-#include "arduscratch.h"
+#include "scratchobject.h"
 
 class Sprite : public ScratchObject
 {
