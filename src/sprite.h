@@ -7,6 +7,7 @@ class Sprite : public ScratchObject
 {
 public:
     Sprite(bool objActive);
+    Sprite(bool objActive, short objPin);
 
     virtual ~Sprite();
 

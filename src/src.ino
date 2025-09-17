@@ -1,7 +1,7 @@
 #include "scratchobject.h"
 #include "sprite.h"
 
-Sprite LED(true);
+Sprite LED(true, 13);
 
 void setup(){}
 

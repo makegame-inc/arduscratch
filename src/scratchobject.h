@@ -8,10 +8,12 @@ class ScratchObject
 protected:
     String name;
     bool isActive;
+    short pin;
 
 public:
     ScratchObject(const String &objName) : name(objName), isActive(false) {}
     ScratchObject(bool &objActive) : isActive(objActive) {}
+    ScratchObject(bool &objActive, short &objPin) : isActive(objActive), pin(objActive) {}
     
     virtual ~ScratchObject() {}
 
