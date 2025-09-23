@@ -5,9 +5,12 @@
 
 class Sprite : public ScratchObject
 {
+private:
+    short pinSprite;
 public:
     Sprite(bool objActive);
     Sprite(bool objActive, short objPin);
+    Sprite(SPRITE_TYPE objSpriteType);
 
     virtual ~Sprite();
 

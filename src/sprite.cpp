@@ -2,6 +2,7 @@
 
 Sprite::Sprite(bool objActive) : ScratchObject(objActive) {}
 Sprite::Sprite(bool objActive, short objPin) : ScratchObject(objActive, objPin) {};
+Sprite::Sprite(SPRITE_TYPE objSpriteType) : ScratchObject(objSpriteType) {};
 
 Sprite::~Sprite() {}
 

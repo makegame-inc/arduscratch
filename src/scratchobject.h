@@ -3,6 +3,14 @@
 
 #include <Arduino.h>
 
+enum SPRITE_TYPE
+{
+    ALL,
+    PINS,
+    SERIALPORT,
+    GRAPHICS,
+};
+
 class ScratchObject
 {
 protected:
@@ -14,7 +22,8 @@ public:
     ScratchObject(const String &objName) : name(objName), isActive(false) {}
     ScratchObject(bool &objActive) : isActive(objActive) {}
     ScratchObject(bool &objActive, short &objPin) : isActive(objActive), pin(objActive) {}
-    
+    ScratchObject(SPRITE_TYPE objSpriteType);
+
     virtual ~ScratchObject() {}
 
     virtual void activate() = 0;
