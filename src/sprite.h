@@ -7,7 +7,11 @@ class Sprite : public ScratchObject
 {
 public:
     // Конструктор вызывает конструктор базового класса
-    Sprite(OBJ_TYPE objType, String objName, short objX, short objY, short objPin) : ScratchObject(objType, objName, objX, objY, objPin) {}
+    Sprite(OBJ_TYPE objType, String objName, short objX, short objY, short objPin) :
+    ScratchObject(objType, objName, objX, objY, objPin) {}
+
+    Sprite(OBJ_TYPE objType, String objName, short objPin):
+    ScratchObject(objType, objName, 0, 0, objPin) {}
 
     virtual ~Sprite() {};
 
