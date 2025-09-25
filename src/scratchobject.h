@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-enum SPRITE_TYPE
+enum OBJ_TYPE
 {
     ALL,
     PINS,
@@ -14,15 +14,16 @@ enum SPRITE_TYPE
 class ScratchObject
 {
 protected:
+    OBJ_TYPE ObjType;
     String name;
-    bool isActive;
+    short x;
+    short y;
     short pin;
+    bool isActive;
 
 public:
-    ScratchObject(const String &objName) : name(objName), isActive(false) {}
-    ScratchObject(bool &objActive) : isActive(objActive) {}
-    ScratchObject(bool &objActive, short &objPin) : isActive(objActive), pin(objActive) {}
-    ScratchObject(SPRITE_TYPE objSpriteType);
+    // Конструктор инициализирует члены базового класса
+    ScratchObject(OBJ_TYPE objType, String objName, short objX, short objY, short objPin) : ObjType(objType), name(objName), x(objX), y(objY), pin(objPin), isActive(false) {}
 
     virtual ~ScratchObject() {}
 
@@ -35,4 +36,4 @@ public:
     bool getIsActive() const { return isActive; }
 };
 
-#endif // ARDUSCRATCH_H
+#endif // SCRATCHOBJECT_H

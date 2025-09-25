@@ -5,14 +5,11 @@
 
 class Sprite : public ScratchObject
 {
-private:
-    short pinSprite;
 public:
-    Sprite(bool objActive);
-    Sprite(bool objActive, short objPin);
-    Sprite(SPRITE_TYPE objSpriteType);
+    // Конструктор вызывает конструктор базового класса
+    Sprite(OBJ_TYPE objType, String objName, short objX, short objY, short objPin) : ScratchObject(objType, objName, objX, objY, objPin) {}
 
-    virtual ~Sprite();
+    virtual ~Sprite() {};
 
     void activate() override;
     void deactivate() override;
@@ -20,4 +17,4 @@ public:
     String getStatus() const override;
 };
 
-#endif // LIGHTSWITCH_H
+#endif // SPRITE_H
