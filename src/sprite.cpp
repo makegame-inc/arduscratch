@@ -1,24 +1,10 @@
-#include "sprite.h"
+#include "Sprite.h"
 
-void Sprite::activate()
-{
-    isActive = true;
+Sprite::Sprite(String spriteName) : name(spriteName), visible(true) {}
 
-    pinMode(pinSprite, OUTPUT);    // 0x1
-    digitalWrite(pinSprite, HIGH); // 0x1
-}
+void Sprite::show() { visible = true; }
+void Sprite::hide() { visible = false; }
+bool Sprite::isVisible() { return visible; }
+String Sprite::getName() { return name; }
 
-void Sprite::deactivate()
-{
-    isActive = false;
-}
-
-void Sprite::toggle()
-{
-    isActive = !isActive;
-}
-
-String Sprite::getStatus() const
-{
-    return isActive ? "on" : "off";
-}
+Sprite::~Sprite() {}

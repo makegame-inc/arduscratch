@@ -1,0 +1,39 @@
+ArduinoScratch/
+├── ArduinoScratch.ino src.ino
+├── Sprite.h
+├── Sprite.cpp
+├── TimerManager.h
+├── TimerManager.cpp
+├── SpriteManager.h
+├── SpriteManager.cpp
+└── Sprites/
+    ├── Led.h
+    ├── Led.cpp
+    ├── Monitor.h
+    ├── Monitor.cpp
+    ├── DisplaySprite.h
+    └── DisplaySprite.cpp
+
+
+Инструкция по использованию:
+Создание светодиода:
+
+cpp
+Led* led = manager.createLed("MyLED", pinNumber);
+led->turnOn();
+led->blink(500); // Мигание каждые 500ms
+Создание монитора для вывода в Serial:
+
+cpp
+Monitor* monitor = manager.createMonitor("Logger");
+monitor->say("Hello World!");
+Работа с таймерами:
+
+cpp
+// Создание таймера
+manager.createTimer("my_timer", 1000, true);
+
+// Проверка срабатывания
+if (manager.isTimerTriggered("my_timer")) {
+    // Действие по таймеру
+}
