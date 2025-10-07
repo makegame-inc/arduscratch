@@ -4,8 +4,8 @@ void Sprite::activate()
 {
     isActive = true;
 
-    pinMode(pinSprite, OUTPUT);    // 0x1
-    digitalWrite(pinSprite, HIGH); // 0x1
+    // pinMode(pinSprite, OUTPUT);    // 0x1
+    // digitalWrite(pinSprite, HIGH); // 0x1
 }
 
 void Sprite::deactivate()
@@ -21,4 +21,9 @@ void Sprite::toggle()
 String Sprite::getStatus() const
 {
     return isActive ? "on" : "off";
+}
+
+bool Sprite::timer()
+{
+    
 }

@@ -1,13 +1,11 @@
-// #include "scratchobject.h"
+#include "scratchobject.h"
 #include "sprite.h"
 
-Sprite LED(true, 13);
-Sprite LED(PINS);
-// Sprite(typeSprite, "Name", x, y, pins)
+Sprite Sprite1(ALL, "Sprite 1", 11);
 
 void setup(){}
 
 void loop()
 {
-    LED.activate();
+    Sprite1.activate();
 }
