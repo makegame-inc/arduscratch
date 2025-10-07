@@ -27,3 +27,9 @@ bool Sprite::timer()
 {
     
 }
+
+String Sprite::say(const char* cstring)
+{
+    Serial.println(cstring);
+    return cstring;
+}

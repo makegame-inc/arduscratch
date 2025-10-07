@@ -33,7 +33,7 @@ public:
     virtual void toggle() = 0;             // переключить статус объекта
     virtual String getStatus() const = 0;  // получить статус объекта
     virtual bool timer() = 0;              // запустить таймер объекта
-    virtual String say() = 0;              // сказать
+    virtual String say(const char* cstring = "") = 0;  // сказать
 
     String getName() const { return name; }
     bool getIsActive() const { return isActive; }
