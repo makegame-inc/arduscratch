@@ -24,7 +24,8 @@ protected:
 
 public:
     // Описываем объект 
-    ScratchObject(OBJ_TYPE objType, String objName, short objX, short objY, short objPin, int objTimer) : ObjType(objType), name(objName), x(objX), y(objY), pin(objPin), isActive(false), timerValue(objTimer) {}
+    ScratchObject(OBJ_TYPE objType, String objName, short objX, short objY, short objPin, int objTimer)
+    : ObjType(objType), name(objName), x(objX), y(objY), pin(objPin), isActive(false), timerValue(objTimer) {}
     virtual ~ScratchObject() {}
 
     // Механика объекта
@@ -32,7 +33,7 @@ public:
     virtual void deactivate() = 0;         // деактивация статуса объекта
     virtual void toggle() = 0;             // переключить статус объекта
     virtual String getStatus() const = 0;  // получить статус объекта
-    virtual bool timer() = 0;              // запустить таймер объекта
+    virtual bool wait() = 0;               // спрайт ждет
     virtual String say(const char* cstring = "") = 0;  // сказать
 
     String getName() const { return name; }

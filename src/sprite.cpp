@@ -4,13 +4,15 @@ void Sprite::activate()
 {
     isActive = true;
 
-    // pinMode(pinSprite, OUTPUT);    // 0x1
-    // digitalWrite(pinSprite, HIGH); // 0x1
+    pinMode(pin, OUTPUT);    // 0x1
+    digitalWrite(pin, HIGH); // 0x1
 }
 
 void Sprite::deactivate()
 {
     isActive = false;
+
+    digitalWrite(pin, LOW); // 0x1
 }
 
 void Sprite::toggle()
@@ -23,13 +25,17 @@ String Sprite::getStatus() const
     return isActive ? "on" : "off";
 }
 
-bool Sprite::timer()
+bool Sprite::wait()
 {
     
 }
 
 String Sprite::say(const char* cstring)
 {
+    Sprite::beginSetting();
+    
+    String text = Sprite::getName() + ": "; 
+    Serial.print(text);
     Serial.println(cstring);
     return cstring;
 }
